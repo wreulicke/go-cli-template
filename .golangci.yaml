@@ -1,0 +1,35 @@
+linters:
+  enable-all: true
+  disable:
+    - varnamelen
+    - testpackage
+    - nonamedreturns
+    - nlreturn
+    - ireturn
+    - mnd
+    - gomnd
+    - exhaustruct
+    - goconst
+    - depguard
+    - wsl
+    - lll
+    - cyclop
+    - gocognit
+    - gocyclo
+    - maintidx
+    - execinquery
+    - gochecknoglobals
+
+linters-settings:
+  revive:
+    rules:
+      # うるさいので止める
+      - name: unused-parameter
+        disabled: true
+
+issues:
+  exclude-rules:
+    - path: _test\.go
+      linters:
+        - errcheck
+        - forcetypeassert

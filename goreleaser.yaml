@@ -1,0 +1,30 @@
+builds:
+  - main: ./cmd/go-cli-template
+    binary: go-cli-template
+    goos:
+      - windows
+      - darwin
+      - linux
+    goarch:
+      - amd64
+      - arm64
+    env:
+      - CGO_ENABLED=0
+    ldflags:
+      - -s -w
+checksum:
+  name_template: checksums.txt
+archives:
+  - format: binary
+snapshot:
+  name_template: master
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - "Merge pull request"
+      - "Merge branch"
+release:
+  github:
+    owner: wreulicke
+    name: go-cli-template

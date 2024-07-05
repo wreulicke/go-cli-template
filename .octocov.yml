@@ -1,0 +1,23 @@
+comment:
+codeToTestRatio:
+  code:
+    - '**/*.go'
+    - '!**/*_test.go'
+  test:
+    - '**/*_test.go'
+coverage:
+  paths:
+    - build/coverage.out
+summary:
+  if: true
+body:
+  if: is_pull_request
+testExecutionTime:
+  if: true
+diff:
+  datastores:
+    - artifact://${GITHUB_REPOSITORY}
+report:
+  if: is_default_branch
+  datastores:
+    - artifact://${GITHUB_REPOSITORY}
