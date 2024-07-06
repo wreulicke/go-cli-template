@@ -48,8 +48,10 @@ func NewVersionCommand() *cobra.Command {
 				return fmt.Errorf("cannot read buildinfo: %w", err)
 			}
 
-			fmt.Fprintf(w, "go version: %s", info.GoVersion)
-			fmt.Fprintf(w, "module version: %s", info.Main.Version)
+			fmt.Fprintf(w, "go version: %s\n", info.GoVersion)
+			fmt.Fprintf(w, "path: %s\n", info.Path)
+			fmt.Fprintf(w, "mod: %s\n", info.Main.Path)
+			fmt.Fprintf(w, "module version: %s\n", info.Main.Version)
 			if detail {
 				fmt.Fprintln(w)
 				fmt.Fprintln(w, info)
