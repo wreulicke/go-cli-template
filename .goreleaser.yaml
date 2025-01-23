@@ -1,7 +1,7 @@
 builds:
-  # patchr:replace - main: ./cmd/${{ input "name" }}
+  # patchr:replace - main: ./cmd/{{ input "name" }}
   - main: ./cmd/go-cli-template
-    # patchr:replace binary: ${{ input "name" }}
+    # patchr:replace binary: {{ input "name" }}
     binary: go-cli-template
     goos:
       - windows
