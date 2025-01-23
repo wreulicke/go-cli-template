@@ -1,3 +1,7 @@
+<!-- patchr:template-start -->
+<!-- # {{ input "name" }} -->
+<!-- patchr:template-end -->
+<!-- patchr:remove -->
 # go-cli-template
 
 This is my repository template for cli tool in go.
@@ -9,6 +13,7 @@ This is my repository template for cli tool in go.
 
 ## Usage
 
+<!-- patchr:cut-start -->
 ```bash
 go-cli-template
 
@@ -26,6 +31,7 @@ Flags:
 
 Use "go-cli-template [command] --help" for more information about a command.
 ```
+<!-- patchr:cut-end -->
 
 ## License
 

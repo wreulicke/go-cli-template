@@ -1,3 +1,4 @@
+// patchr:replace module github.com/wreulicke/{{ input "repo" }}
 module github.com/wreulicke/go-cli-template
 
 go 1.22

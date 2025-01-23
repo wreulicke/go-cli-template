@@ -1,5 +1,8 @@
 package main
 
+// patchr:cut-start
+//go:generate go run github.com/wreulicke/patchr/cmd/patchr@v0.0.4 ../../
+// patchr:cut-end
 import (
 	"debug/buildinfo"
 	"fmt"
@@ -22,8 +25,14 @@ func main() {
 
 func NewApp() *cobra.Command {
 	c := cobra.Command{
+		// patchr:template-start
+		// Use:   "{{ input "name" }}",
+		// Short: "{{ input "name" }}",
+		// patchr:template-end
+		// patchr:cut-start
 		Use:   "go-cli-template",
 		Short: "go-cli-template",
+		// patchr:cut-end
 		RunE: func(cmd *cobra.Command, args []string) error {
 			// nop
 			return nil

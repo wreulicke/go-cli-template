@@ -1,5 +1,7 @@
 builds:
+  # patchr:replace - main: ./cmd/{{ input "name" }}
   - main: ./cmd/go-cli-template
+    # patchr:replace binary: {{ input "name" }}
     binary: go-cli-template
     goos:
       - windows
@@ -27,4 +29,5 @@ changelog:
 release:
   github:
     owner: wreulicke
+    # patchr:replace name: {{ input "name" }}
     name: go-cli-template
