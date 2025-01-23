@@ -1,5 +1,8 @@
 package main
 
+// patchr:cut-start
+//go:generate go run github.com/wreulicke/patchr/cmd/patchr@v0.0.4 ../../
+// patchr:cut-end
 import (
 	"debug/buildinfo"
 	"fmt"
