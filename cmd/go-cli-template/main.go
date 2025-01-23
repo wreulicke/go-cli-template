@@ -22,8 +22,14 @@ func main() {
 
 func NewApp() *cobra.Command {
 	c := cobra.Command{
+		// patchr:template-start
+		// Use:   "{{ input "name" }}",
+		// Short: "{{ input "name" }}",
+		// patchr:template-end
+		// patchr:cut-start
 		Use:   "go-cli-template",
 		Short: "go-cli-template",
+		// patchr:cut-end
 		RunE: func(cmd *cobra.Command, args []string) error {
 			// nop
 			return nil
