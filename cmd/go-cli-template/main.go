@@ -52,7 +52,11 @@ func NewVersionCommand() *cobra.Command {
 		Short: "show version",
 		RunE: func(cmd *cobra.Command, args []string) error {
 			w := cmd.OutOrStdout()
-			info, err := buildinfo.ReadFile(os.Args[0])
+			path, err := os.Executable()
+			if err != nil {
+				return fmt.Errorf("cannot get executable path: %w", err)
+			}
+			info, err := buildinfo.ReadFile(path)
 			if err != nil {
 				return fmt.Errorf("cannot read buildinfo: %w", err)
 			}
