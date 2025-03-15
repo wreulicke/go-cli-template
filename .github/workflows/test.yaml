@@ -30,7 +30,7 @@ jobs:
         if: success() || failure()
         uses: dorny/test-reporter@v1
         with:
-          name: Tests
+          name: test-report
           path: "build/reports.xml"
           reporter: java-junit
       - uses: k1LoW/octocov-action@v1
