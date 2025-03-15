@@ -12,5 +12,5 @@ test: build/gotestsum
 	build/gotestsum \
 		--format standard-verbose \
 		--jsonfile build/reports.json \
-		--junitfile build/reports.xml ./... \
-		-- -race -coverprofile=build/coverage.out ${ARG}
+		--junitfile build/reports.xml \
+		--  ./... -race -coverprofile=build/coverage.out ${ARG}
