@@ -3,6 +3,8 @@ module github.com/wreulicke/go-cli-template
 
 go 1.22
 
+toolchain go1.24.1
+
 require github.com/spf13/cobra v1.8.1
 
 require github.com/pmezard/go-difflib v1.0.0 // indirect
