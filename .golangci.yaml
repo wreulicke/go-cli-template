@@ -1,35 +1,53 @@
+version: "2"
 linters:
-  enable-all: true
+  default: all
   disable:
-    - varnamelen
-    - testpackage
-    - nonamedreturns
-    - nlreturn
-    - ireturn
-    - mnd
-    - gomnd
-    - exhaustruct
-    - goconst
-    - depguard
-    - wsl
-    - lll
     - cyclop
-    - gocognit
-    - gocyclo
-    - maintidx
-    - execinquery
+    - depguard
+    - exhaustruct
     - gochecknoglobals
-
-linters-settings:
-  revive:
+    - gocognit
+    - goconst
+    - gocyclo
+    - ireturn
+    - lll
+    - maintidx
+    - mnd
+    - nlreturn
+    - nonamedreturns
+    - testpackage
+    - varnamelen
+    - wsl
+  settings:
+    revive:
+      rules:
+        - name: unused-parameter
+          disabled: true
+  exclusions:
+    generated: lax
+    presets:
+      - comments
+      - common-false-positives
+      - legacy
+      - std-error-handling
     rules:
-      # うるさいので止める
-      - name: unused-parameter
-        disabled: true
-
-issues:
-  exclude-rules:
-    - path: _test\.go
-      linters:
-        - errcheck
-        - forcetypeassert
+      - linters:
+          - errcheck
+          - forcetypeassert
+        path: _test\.go
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
+formatters:
+  enable:
+    - gci
+    - gofmt
+    - gofumpt
+    - goimports
+  exclusions:
+    generated: lax
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
