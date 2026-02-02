@@ -6,9 +6,9 @@
   "customManagers": [
     {
       "customType": "regex",
-      "datasourceTemplate": "{{datasource}}",
-      "managerFilePatterns": "^Makefile$",
+      "managerFilePatterns": "Makefile",
       "depNameTemplate": "{{depName}}",
+      "datasourceTemplate": "{{datasource}}",
       "matchStrings": [
         ":=v?(?<currentValue>[0-9]+\\.[0-9]+\\.[0-9]+)\\s+# renovate: datasource=(?<datasource>[^ ]+) depName=(?<depName>[^\\n]+)"
       ]
