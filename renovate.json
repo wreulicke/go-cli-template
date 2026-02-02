@@ -3,6 +3,16 @@
   "extends": [
     "config:recommended"
   ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "datasourceTemplate": "{{datasource}}",
+      "managerFilePatterns": "^Makefile$",
+      "matchStrings": [
+        ":=v?(?<currentValue>[0-9]+\\.[0-9]+\\.[0-9]+)\\s+# renovate: datasource={{datasource}} depName={{depName}}"
+      ]
+    }
+  ],
   "packageRules": [
     {
       "matchDatasources": ["golang-version"],

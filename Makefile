@@ -1,8 +1,11 @@
 ARG:=
 MAKEFILE_DIR:=$(dir $(abspath $(lastword $(MAKEFILE_LIST))))
+
+GOTESTSUM_VERSION:=v1.12.1 # renovate: datasource=github-releases depName=gotest.tools/gotestsum
+
 build/gotestsum:
 	mkdir -p build
-	GOBIN=$(MAKEFILE_DIR)/build go install gotest.tools/gotestsum@v1.12.1
+	GOBIN=$(MAKEFILE_DIR)/build go install gotest.tools/gotestsum@${GOTESTSUM_VERSION}
 
 # Run tests
 # if you want to update snapshot, run `make test ARG=-update`
