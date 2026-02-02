@@ -19,7 +19,8 @@ func mainInternal() error {
 }
 
 func main() {
-	if err := mainInternal(); err != nil {
+	err := mainInternal()
+	if err != nil {
 		log.Fatal(err)
 	}
 }
@@ -43,11 +44,13 @@ func NewApp() *cobra.Command {
 	c.AddCommand(
 		NewVersionCommand(),
 	)
+
 	return &c
 }
 
 func NewVersionCommand() *cobra.Command {
 	var detail bool
+
 	c := &cobra.Command{
 		Use:   "version",
 		Short: "show version",
@@ -56,6 +59,7 @@ func NewVersionCommand() *cobra.Command {
 		},
 	}
 	c.Flags().BoolVarP(&detail, "detail", "d", false, "show details")
+
 	return c
 }
 
@@ -64,6 +68,7 @@ func version(w io.Writer, detail bool) error {
 	if err != nil {
 		return fmt.Errorf("cannot get executable path: %w", err)
 	}
+
 	info, err := buildinfo.ReadFile(path)
 	if err != nil {
 		return fmt.Errorf("cannot read buildinfo: %w", err)
@@ -73,9 +78,11 @@ func version(w io.Writer, detail bool) error {
 	fmt.Fprintf(w, "path: %s\n", info.Path)
 	fmt.Fprintf(w, "mod: %s\n", info.Main.Path)
 	fmt.Fprintf(w, "module version: %s\n", info.Main.Version)
+
 	if detail {
 		fmt.Fprintln(w)
 		fmt.Fprintln(w, info)
 	}
+
 	return nil
 }
