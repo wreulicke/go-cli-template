@@ -1,0 +1,22 @@
+name: tagpr
+on:
+  push:
+    branches:
+    - "main"
+permissions:
+  contents: write
+  pull-requests: write
+  issues: read
+jobs:
+  tagpr:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+    - name: checkout
+      uses: actions/checkout@v6
+      with:
+        persist-credentials: false
+        token: ${{ secrets.TAGPR_TOKEN }}
+    - uses: Songmu/tagpr@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.TAGPR_TOKEN }}
