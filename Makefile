@@ -1,7 +1,7 @@
 ARG:=
 MAKEFILE_DIR:=$(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
-GOTESTSUM_VERSION:=v1.12.1 # renovate: datasource=github-releases depName=gotest.tools/gotestsum
+GOTESTSUM_VERSION:=v1.12.1 # renovate: datasource=github-releases depName=gotestyourself/gotestsum
 
 build/gotestsum:
 	mkdir -p build
