@@ -1,4 +1,0 @@
-go version: go1.24.1
-path: github.com/wreulicke/go-cli-template/cmd/go-cli-template
-mod: github.com/wreulicke/go-cli-template
-module version: (devel)
