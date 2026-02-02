@@ -1,3 +1,5 @@
+<!-- patchr:comment-prefix -->
+<!-- patchr:truncate -->
 # Changelog
 
 ## [v0.0.3](https://github.com/wreulicke/go-cli-template/compare/v0.0.2...v0.0.3) - 2026-02-02
