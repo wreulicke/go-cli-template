@@ -15,17 +15,14 @@ jobs:
     name: test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-go@v5
+      - uses: actions/checkout@v6
+      - uses: actions/setup-go@v6
         with:
           go-version: '1.24.1'
-      - name: golangci-lint
-        uses: golangci/golangci-lint-action@v6
+      - uses: golangci/golangci-lint-action@v6
         with:
           version: v2.8.0
-      - uses: actions/checkout@v4
-      - name: test
-        run: make test
+      - run: make test
       - name: Test Report Summary
         if: success() || failure()
         uses: dorny/test-reporter@v1
