@@ -21,7 +21,7 @@ jobs:
           go-version: '1.26.5'
       - uses: golangci/golangci-lint-action@v9
         with:
-          version: v2.8.0
+          version: v2.13.2
       - run: make test
       - name: Test Report Summary
         if: success() || failure()
