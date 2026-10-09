@@ -25,7 +25,7 @@ jobs:
       - run: make test
       - name: Test Report Summary
         if: success() || failure()
-        uses: dorny/test-reporter@v2
+        uses: dorny/test-reporter@v3
         with:
           name: test-report
           path: "build/reports.xml"
