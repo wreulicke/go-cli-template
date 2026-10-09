@@ -2,6 +2,8 @@
 <!-- patchr:truncate -->
 # Changelog
 
+## [v0.0.4](https://github.com/wreulicke/go-cli-template/compare/v0.0.3...v0.0.4) - 2026-02-02
+
 ## [v0.0.3](https://github.com/wreulicke/go-cli-template/compare/v0.0.2...v0.0.3) - 2026-02-02
 - Add patchr comment by @wreulicke in https://github.com/wreulicke/go-cli-template/pull/1
 - fix version command by @wreulicke in https://github.com/wreulicke/go-cli-template/pull/2
