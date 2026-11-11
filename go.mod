@@ -2,7 +2,7 @@
 // patchr:replace module github.com/wreulicke/{{ input "repo" }}
 module github.com/wreulicke/go-cli-template
 
-go 1.27.2
+go 1.27.4
 
 require github.com/spf13/cobra v1.10.2
 
